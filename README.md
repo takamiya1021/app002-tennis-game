@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# テニスゲーム 🎾
 
-## Getting Started
+![テニスゲーム スクリーンショット](./public/screenshot.png)
 
-First, run the development server:
+## 概要
+
+シンプルで楽しいブラウザベースの2Dテニスゲームです。プレイヤーは緑のパドルを操作してCPU（赤のパドル）と対戦します。
+
+## デモ
+
+[🎮 今すぐプレイ](https://app002-tennis-game.vercel.app)
+
+## 特徴
+
+- 🎮 シンプルで直感的な操作
+- 🤖 CPUとの対戦モード
+- ⚡ リアルタイムの物理演算
+- 🏆 10点先取で勝利
+- 📱 レスポンシブデザイン
+
+## 遊び方
+
+1. 「ゲームスタート」ボタンをクリック
+2. キーボードの矢印キーで操作：
+   - ↑ : パドルを上に移動
+   - ↓ : パドルを下に移動
+3. ボールを打ち返してCPU側のコートに入れると得点
+4. 先に10点取った方が勝利！
+
+## 技術スタック
+
+- **フレームワーク**: Next.js 15.5.2
+- **言語**: TypeScript
+- **スタイリング**: Tailwind CSS
+- **デプロイ**: Vercel
+- **パッケージマネージャー**: npm
+
+## インストール & 起動
+
+### 必要な環境
+
+- Node.js 18.x 以上
+- npm または yarn
+
+### ローカルで実行
 
 ```bash
+# リポジトリをクローン
+git clone https://github.com/takamiya1021/app002-tennis-game.git
+
+# ディレクトリに移動
+cd app002-tennis-game
+
+# 依存関係をインストール
+npm install
+
+# 開発サーバーを起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで http://localhost:3000 を開いてください。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ビルド & デプロイ
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### プロダクションビルド
 
-## Learn More
+```bash
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Vercelへのデプロイ
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+このプロジェクトはVercelで簡単にデプロイできます：
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/takamiya1021/app002-tennis-game)
 
-## Deploy on Vercel
+## ゲームの仕組み
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 物理演算
+- ボールの速度は徐々に加速します
+- パドルに当たった位置によってボールの角度が変わります
+- 上下の壁でボールが跳ね返ります
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### CPU AI
+- ボールの位置を追跡して移動
+- 適度な難易度に調整された速度制限
+
+## プロジェクト構造
+
+```
+app002-tennis-game/
+├── app/
+│   ├── page.tsx        # メインゲームコンポーネント
+│   ├── layout.tsx      # レイアウト定義
+│   └── globals.css     # グローバルスタイル
+├── public/
+│   └── screenshot.png  # ゲームスクリーンショット
+├── package.json        # プロジェクト設定
+└── README.md          # このファイル
+```
+
+## 今後の改善予定
+
+- [ ] サウンドエフェクトの追加
+- [ ] 難易度選択機能
+- [ ] 2人プレイモード
+- [ ] スマートフォン対応（タッチ操作）
+- [ ] ハイスコア記録機能
+- [ ] パワーアップアイテム
+
+## ライセンス
+
+MIT
+
+## 作者
+
+[@takamiya1021](https://github.com/takamiya1021)
+
+---
+
+🎮 楽しんでプレイしてください！フィードバックや改善提案はIssuesまでお願いします。
